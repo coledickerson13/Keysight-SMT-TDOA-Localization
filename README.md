@@ -1,3 +1,3 @@
 Helper files to post-process .csv files from Keysight Sensor Management Tool .csv Export Tool. To use, add .csv files to the MATLAB working directory,
 define the file name in line 3 of either script, and hit run. KeysightRFTDOALocalization.m is for post-processing results from a stationary tower and 
-KeysightRFTDOALocalizationforFlights.m is for UAV flights.
+KeysightRFTDOALocalizationforFlights.m is for UAV flights. MergeLocalizationData.ipynb helps to merge the .csv file from the Keysight N6854 Export tool and the vehicleOut.txt files from the AERPAW file. It adds the ground truth Lat/Long coordinates and the altitude from the vehicleOut.txt file to all the other information provided in the Keysight N6854 Export .csv file.
