@@ -1,6 +1,6 @@
 %Reading in data from .csv file
 % Define the filename
-filename = 'defaultflight.csv';
+filename = 'updated_100m5MHz7.15.24.csv';
 %Make sure to open CSV file and delete any spaces between column headings
 
 % Read the data from the CSV file
@@ -175,9 +175,6 @@ grid on;
 average_distance_error = mean(distance_error);
 fprintf('Average distance error: %.2f meters\n', average_distance_error);
 
-% Subsetting distance_error vector for indices 21 to 35
-subset_distance_error = distance_error(1:55);
-
-% Calculate the mean of the subset
-mean_subset_distance_error = mean(subset_distance_error);
-fprintf('Mean distance error for indices 1 to 55: %.2f meters\n', mean_subset_distance_error);
+% Calculate and print the mean of the distance errors less than 100 meters
+mean_distance_error_lt_100 = mean(distance_error(distance_error < 100));
+fprintf('Mean distance error (less than 100 meters): %.2f meters\n', mean_distance_error_lt_100);
